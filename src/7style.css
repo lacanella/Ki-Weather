@@ -1,3 +1,9 @@
 .application {
   max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 5px;
+  color: #1a6ec5;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
 }
