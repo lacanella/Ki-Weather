@@ -11,15 +11,16 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/7style.css" />
   </head>
   <body>
     <div class="conteiner">
       <div class="application">
-        <h1>Kyiv</h1>
+        <h1 id="cityname">Kyiv</h1>
         <ul>
           <li>Friday 12:00</li>
-          <li>Cloudly</li>
+          <li id="conditions">Cloudly</li>
         </ul>
         <div class="row">
           <div class="col-4">
@@ -28,7 +29,7 @@
               alt="Cloudly"
               width="47px"
             />
-            <span><strong>24</strong></span>
+            <span><strong id="temperature"></strong></span>
             <span class="degrees"
               ><span class="celsius">°C</span> |
               <a href="#"><span class="fahrenheit">°F</span></a></span
@@ -36,9 +37,9 @@
           </div>
           <div class="col-4">
             <ul class="discription">
-              <li>precipitation 65%</li>
-              <li>humidity 8%</li>
-              <li>wind 7km/h</li>
+              <li>precipitation <span id="precipitation"></span>%</li>
+              <li>humidity <span id="humidity">8</span>8%</li>
+              <li>wind <span id="wind">7</span>km/h</li>
             </ul>
           </div>
         </div>
