@@ -37,6 +37,7 @@ li {
   max-width: 600px;
   display: block;
   text-align: right;
+  margin-right: 20px;
 }
 img {
   margin-right: 5px;
@@ -45,7 +46,6 @@ img {
 }
 strong {
   font-size: 40px;
-
   line-height: 1;
 }
 .degrees {
@@ -55,7 +55,6 @@ strong {
 }
 .discription {
   margin-left: 20px;
-  width: 300px;
 }
 .weather-temperature {
   margin-top: 10px;
