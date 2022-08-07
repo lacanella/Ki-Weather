@@ -44,6 +44,5 @@ function showTemperature(responce) {
 
 let apiKey = "fc91beb744f93e422747179ad98c56f9";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
 
 axios.get(apiUrl).then(showTemperature);
