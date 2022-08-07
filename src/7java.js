@@ -1,12 +1,16 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-  if (hours<10){hours=`0${hours}`;}
+  if (hours < 10) {
+    hours = `0{hours}`;
+  }
 
   let minutes = date.getMinutes();
-  if minutes (minutes<10){minutes=`0${minutes}`;}
+  if (minutes < 10) {
+    minutes = `0{minutes}`;
+  }
 
-let days = [
+  let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -15,38 +19,27 @@ let days = [
     "Friday",
     "Saturday",
   ];
-  let day = days [date.getDay()];
+  let day = days[date.getDay()];
+
   return `${day} ${hours}:${minutes}`;
 }
 
-function ShowDay (timestamp) {
-  let date = new Date(timestamp*1000);
-  let day = date.getDay();
-  let days = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
-  return days[day]
-}
-
-  let dateElement = document.querySelector("currentdate");
-  dateElement.innerHTML = formatDate(timestamp);
-
 function showTemperature(responce) {
   let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(responce.data.main.temp);
-
   let cityElement = document.querySelector("#cityname");
-  cityElement.innerHTML = responce.data.name;
-
   let conditionElement = document.querySelector("#conditions");
-  conditionElement.innerHTML = responce.data.weather[0].description;
-
- 
-
+  let dateElement = document.querySelector("#currentdate");
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = responce.data.main.humidity;
-
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = Math.round(responce.data.wind.speed);
+  let iconElement = document.querySelector("#icon");
 
+  tempElement.innerHTML = Math.round(responce.data.main.temp);
+  cityElement.innerHTML = responce.data.name;
+  conditionElement.innerHTML = responce.data.weather[0].description;
+  dateElement.innerHTML = formatDate(responce.data.dt * 1000);
+  humidityElement.innerHTML = responce.data.main.humidity;
+  windElement.innerHTML = Math.round(responce.data.wind.speed);
+  iconElement.innerHTML = responce.data.weather.icon;
 }
 
 let apiKey = "fc91beb744f93e422747179ad98c56f9";
