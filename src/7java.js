@@ -43,9 +43,11 @@ function showTemperature(responce) {
     "src",
     `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", responce.data.weather[0].description);
 }
 
 let apiKey = "fc91beb744f93e422747179ad98c56f9";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
+let city = "Warszawa";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
