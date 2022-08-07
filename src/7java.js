@@ -46,8 +46,18 @@ function showTemperature(responce) {
   iconElement.setAttribute("alt", responce.data.weather[0].description);
 }
 
-let apiKey = "fc91beb744f93e422747179ad98c56f9";
-let city = "Warszawa";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "fc91beb744f93e422747179ad98c56f9";
 
-axios.get(apiUrl).then(showTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function searching(event) {
+  event.preventDefault();
+  let typecityElement = document.querySelector("#typecity");
+  search(typecityElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searching);
