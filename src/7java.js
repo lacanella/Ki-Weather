@@ -39,7 +39,10 @@ function showTemperature(responce) {
   dateElement.innerHTML = formatDate(responce.data.dt * 1000);
   humidityElement.innerHTML = responce.data.main.humidity;
   windElement.innerHTML = Math.round(responce.data.wind.speed);
-  iconElement.innerHTML = responce.data.weather.icon;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
+  );
 }
 
 let apiKey = "fc91beb744f93e422747179ad98c56f9";
