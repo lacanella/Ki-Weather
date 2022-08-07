@@ -21,7 +21,7 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
 
-  return `${day} ${hours}:${minutes}`;
+  return `your time: ${day} ${hours}:${minutes}`;
 }
 
 function showTemperature(responce) {
