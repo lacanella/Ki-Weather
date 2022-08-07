@@ -57,3 +57,8 @@ strong {
   margin-left: 20px;
   width: 300px;
 }
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+  text-decoration: underline;
+}
